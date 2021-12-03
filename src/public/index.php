@@ -19,9 +19,9 @@ try {
     $router->get('/game', [App\Controllers\GameController::class, 'index']);
     $router->post('/game', [App\Controllers\GameController::class, 'addGame']);
     $router->get('/player', [App\Controllers\PlayerController::class, 'index']);
-    $router->post('/player', [App\Controllers\PlayerController::class, 'addGame']);
+    $router->post('/player', [App\Controllers\PlayerController::class, 'addPlayer']);
     $router->get('/contest', [App\Controllers\ContestController::class, 'index']);
-    $router->post('/contest', [App\Controllers\ContestController::class, 'addGame']);
+    $router->post('/contest', [App\Controllers\ContestController::class, 'addContest']);
 
 
     echo $router->resolve($_SERVER['REQUEST_URI'], strtolower($_SERVER['REQUEST_METHOD']));
