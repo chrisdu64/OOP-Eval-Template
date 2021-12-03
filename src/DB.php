@@ -10,7 +10,7 @@ use PDO;
     {
         private static PDO $pdo;
 
-        public function __construct(string $config = 'mysql:host=HOST;dbname=DATABASE;', string $user = 'USERNAME', string $password = 'PASSWORD')
+        public function __construct(string $config = 'mysql:host=db;dbname=wf3_php_final_christophe;', string $user = 'root', string $password = 'root')
         {
             try {
                 static::$pdo = new PDO($config, $user, $password);
