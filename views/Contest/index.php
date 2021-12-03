@@ -1,6 +1,6 @@
 <h1>Bienvenue sur la page de création d'un nouveau match</h1>
 <h2>Veuillez remplir les champs suivants :</h2>
-<form action="/game/addContest" method="post"
+<form action="/contest/addContest" method="post"
     style="display: flex;justify-content:space-between;flex-direction:column;">
     <div class="input-group">
         <label for="game_id">Choisissez sur quel jeu se fera le prochain match :</label>

@@ -1,6 +1,6 @@
 <h1>Bienvenue sur la page de création d'un nouveau joueur</h1>
 <h2>Veuillez remplir les champs suivants :</h2>
-<form action="/game/addPlayer" method="post"
+<form action="/player/addPlayer" method="post"
     style="display: flex;justify-content:space-between;flex-direction:column;">
     <div class="input-group">
         <label for="email">Votre adresse mail :</label>

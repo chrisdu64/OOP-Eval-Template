@@ -1,0 +1,1 @@
+<h1>Bienvenue <?php echo $_POST['email'] ?> en tant que nouveau joueur !!</h1>

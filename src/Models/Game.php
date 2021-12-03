@@ -117,7 +117,7 @@
             $req = $db->prepare($sql);
             $req->bindValue(':title', $title, \PDO::PARAM_STR);
             $req->bindValue(':min_players', $min_players, \PDO::PARAM_INT);
-            $req->bindValue(':max_players', $max_players, \PDO::PARAM_STR);
+            $req->bindValue(':max_players', $max_players, \PDO::PARAM_INT);
 
             return $req->execute();
         } catch (\PDOException $e) {
