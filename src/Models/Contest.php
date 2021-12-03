@@ -97,7 +97,7 @@
             try {
                 $db = (new DB())->getStaticPdo();
     
-                $sql = $db->query('SELECT * FROM contest');
+                $sql = $db->query('SELECT * FROM contest ORDER BY start_date DESC');
     
                 $result = $sql->fetchAll(\PDO::FETCH_CLASS, '\App\Models\Contest');
     
@@ -107,16 +107,15 @@
             }
         }
     
-        public function addContest(int $game_id, date $start_date, int $winner_id): bool
+        public function addContest(int $game_id, string $start_date): bool
         {
             try {
                 $db = (new DB())->getStaticPdo();
     
-                $sql = 'INSERT INTO contest (game_id,start_date, winner_id) VALUES (:game_id,:start_date, :winner_id)';
+                $sql = 'INSERT INTO contest (game_id,start_date) VALUES (:game_id,:start_date)';
                 $req = $db->prepare($sql);
                 $req->bindValue(':game_id', $game_id, \PDO::PARAM_INT);
                 $req->bindValue(':start_date', $start_date, \PDO::PARAM_STR);
-                $req->bindValue(':winner_id', $winner_id, \PDO::PARAM_INT);
     
                 return $req->execute();
             } catch (\PDOException $e) {

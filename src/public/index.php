@@ -15,7 +15,7 @@ session_start();
 try {
     $router = new \App\Router();
 
-    $router->get('/', function () { echo 'Hello World !';});
+    $router->get('/', [App\Controllers\HomeController::class, 'index']);
     $router->get('/game', [App\Controllers\GameController::class, 'index']);
     $router->post('/game/addGame', [App\Controllers\GameController::class, 'addGame']);
     $router->get('/player', [App\Controllers\PlayerController::class, 'index']);

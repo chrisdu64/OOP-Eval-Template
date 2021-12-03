@@ -29,7 +29,6 @@ use App\Models\Contest;
             $contest_infos = [
                 'game_id' => intval(htmlspecialchars($_POST['game_id'])),
                 'start_date' => htmlspecialchars(trim($_POST['start_date'])),
-                'winner-id' => intval(htmlspecialchars($_POST['winner-id'])),
             ];
             
 
