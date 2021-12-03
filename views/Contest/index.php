@@ -1,11 +1,14 @@
 <h1>Bienvenue sur la page de création d'un nouveau match</h1>
 <h2>Veuillez remplir les champs suivants :</h2>
+
 <form action="/contest/addContest" method="post"
-    style="display: flex;justify-content:space-between;flex-direction:column;">
-    <div class="input-group">
-        <label for="game_id">Choisissez sur quel jeu se fera le prochain match :</label>
-        <select name="game_id" id="game_id">
-            <option value=""><?php ?></option>
+style="display: flex;justify-content:space-between;flex-direction:column;">
+<div class="input-group">
+    <label for="game_id">Choisissez sur quel jeu se fera le prochain match :</label>
+    <select name="game_id" id="game_id">
+            <?php foreach ($this->games as $game) : ?>
+            <option value="<?php echo $game->getId(); ?>"><?php echo $game->getTitle(); ?></option>
+            <? endforeach; ?>
         </select>
     </div>
     <div class="input-group">
